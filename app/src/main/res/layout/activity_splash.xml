@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5D8AE"
     tools:context="com.example.nombu.findme.SplashActivity">
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/emergency"
+        android:src="@drawable/helpinghand"
         tools:layout_editor_absoluteX="64dp"
         tools:layout_editor_absoluteY="137dp"
         android:layout_alignParentBottom="true"

@@ -47,14 +47,8 @@ public class UserFragment extends Fragment {
 
     }
     void connectToFirebase(){
-        auth=new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-                userId=firebaseUser.getUid();
-            }
-        };
-
+        FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
+        userId=firebaseUser.getUid();
     }
     void pushToFirebase(User user){
         reference.push().setValue(user);

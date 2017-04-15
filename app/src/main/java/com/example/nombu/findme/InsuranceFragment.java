@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,11 +25,9 @@ public class InsuranceFragment extends Fragment {
     FirebaseAuth.AuthStateListener auth;
     String userId;
 
-
     public InsuranceFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,18 +47,12 @@ public class InsuranceFragment extends Fragment {
 
     }
     void connectToFirebase(){
-        auth=new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user= firebaseAuth.getCurrentUser();
-                userId=user.getUid();
-            }
-        };
+      FirebaseUser firebaseUser=FirebaseAuth.getInstance().getCurrentUser();
+        userId=firebaseUser.getUid();
 
     }
     void pushToFirebase(Insurance insurance){
         reference.push().setValue(insurance);
     }
-
 
 }
