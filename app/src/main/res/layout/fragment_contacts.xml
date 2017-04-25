@@ -2,12 +2,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nombu.findme.ContactsFragment">
+    tools:context="com.example.nombu.findme.fragments.ContactsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/colorPrimaryLight">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="30dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/linearLayout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medical Cover "
+                    android:textColor="@color/flatui_alizarin"
+                    android:textSize="45dp"
+                    android:textStyle="bold"
+                    android:layout_above="@+id/linearLayout"
+                    android:layout_centerHorizontal="true"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorTextIcons"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="Step 5: Please Provide Emergency Contacts"
+                    android:id="@+id/registerTextView"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/emergencyContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:hint="Emergency Contact"
+                    android:nextFocusDown="@+id/emergencyNumber"
+                    android:padding="10dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorDivider"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="10dp"/>
+                <EditText
+                    android:id="@+id/emergencyNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:hint="Contact number"
+                    android:nextFocusDown="@+id/emergencyContactAddBtn"
+                    android:padding="10dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorDivider"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="10dp"/>
+
+                <Button
+                    android:id="@+id/emergencyContactAddBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Add Contact"
+                    android:nextFocusDown="@+id/emergencyContactBtn"
+                    android:background="@color/flatui_turquoise"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/emergencyContactBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Save and Continue"
+                    android:background="@color/flatui_turquoise"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@android:color/white"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
 
 </FrameLayout>

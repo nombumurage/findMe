@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home" />
         <item
             android:id="@+id/nav_user"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_person_black_24dp"
             android:title="User Profile" />
         <item
             android:id="@+id/nav_conditions"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_history_black_24dp"
             android:title="Medical Conditions" />
         <item
             android:id="@+id/nav_allergies"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_warning_black_24dp"
             android:title="Allergies" />
         <item
             android:id="@+id/nav_medication"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_info_outline_black_24dp"
             android:title="Medication" />
         <item
             android:id="@+id/nav_contacts"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_contact_phone_black_24dp"
             android:title="Emergency Contacts" />
         <item
             android:id="@+id/nav_insurances"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_assignment_black_24dp"
             android:title="Insurances"/>
     </group>
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_location"
-            android:icon="@drawable/ic_menu_share"
+            android:icon="@drawable/ic_location_on_black_24dp"
             android:title="Location" />
         <item
             android:id="@+id/nav_send"

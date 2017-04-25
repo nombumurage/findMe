@@ -4,8 +4,69 @@
     android:layout_height="match_parent"
     tools:context="com.example.nombu.findme.MainFragment">
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="@dimen/nav_header_height"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        android:backgroundTintMode="add"
+        android:gravity="bottom"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:weightSum="1">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_weight="0.1"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            app:srcCompat="@drawable/maplogo3" />
+
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="85dp"
+            android:layout_weight="0.80"
+            android:layout_marginBottom="5dp"
+            android:text="Welcome to FindMe App"
+            android:textSize="30dp"
+           />
+
+    </LinearLayout>
+
+
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="40dp"
+        android:src = "@drawable/userprofile"/>
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="200dp"
+        android:src = "@drawable/ambulance"/>
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginLeft="110dp"
+        android:src = "@drawable/warningsquare"/>
+
+
+
+
+
+
+
+
 </FrameLayout>

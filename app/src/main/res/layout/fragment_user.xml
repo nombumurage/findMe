@@ -2,19 +2,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nombu.findme.UserFragment">
+    tools:context="com.example.nombu.findme.fragments.UserFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryLight">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="30dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/linearLayout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User Information"
+                    android:textColor="@color/flatui_alizarin"
+                    android:textSize="40dp"
+                    android:textStyle="bold"
+                    android:layout_above="@+id/linearLayout"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorTextIcons"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="Step 1: Basic User Information"
+                    android:id="@+id/registerTextView"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:hint="Full Name"
+                    android:nextFocusDown="@+id/gender_spinner"
+                    android:padding="10dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorDivider"
+                    android:textSize="20sp"
+                    android:layout_marginBottom="10dp"/>
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/gender_spinner"
+                    android:nextFocusDown="@+id/userAge"
+                    android:background="@android:color/white"
+                    android:entries="@array/user_gender"
+                    android:textColorHint="@color/colorDivider"
+                    android:padding="11dp"
+                    android:layout_marginBottom="10dp">
+
+                </android.support.v7.widget.AppCompatSpinner>
+
+                <EditText
+                    android:id="@+id/userAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:hint="Age"
+                    android:nextFocusDown="@+id/userBtn"
+                    android:padding="10dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorDivider"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/userBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Submit"
+                    android:background="@color/flatui_turquoise"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </ScrollView>
 
     </RelativeLayout>
 

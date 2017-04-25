@@ -110,6 +110,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        mAuthProgressDialog.dismiss();
                         if (task.isSuccessful()) {
                             Log.d(TAG, "Authentication successful");
                             createFirebaseUserProfile(task.getResult().getUser());

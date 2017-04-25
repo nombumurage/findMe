@@ -2,12 +2,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nombu.findme.MedicationFragment">
+    tools:context="com.example.nombu.findme.fragments.MedicationFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/colorPrimaryLight">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="30dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/linearLayout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medication"
+                    android:textColor="@color/flatui_alizarin"
+                    android:textSize="45dp"
+                    android:textStyle="bold"
+                    android:layout_above="@+id/linearLayout"
+                    android:layout_centerHorizontal="true"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorTextIcons"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:text="Step 4: Please state medication you are currently using"
+                    android:id="@+id/allergiesTextView"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="12dp"/>
+
+                <EditText
+                    android:id="@+id/userMedication"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:hint="State current medication being taken if any"
+                    android:nextFocusDown="@+id/userAddMedBtn"
+                    android:padding="10dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@color/colorDivider"
+                    android:textSize="20sp"
+                    android:inputType="textMultiLine"
+                    />
+
+                <Button
+                    android:id="@+id/userAddMedBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Add Entry"
+                    android:background="@color/flatui_turquoise"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/userMedicationBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Save and Continue"
+                    android:background="@color/flatui_turquoise"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
 
 </FrameLayout>

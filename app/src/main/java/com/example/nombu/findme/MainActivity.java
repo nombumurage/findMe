@@ -5,14 +5,11 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -22,28 +19,30 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.nombu.findme.fragments.AllergiesFragment;
+import com.example.nombu.findme.fragments.ConditionsFragment;
+import com.example.nombu.findme.fragments.ContactsFragment;
+import com.example.nombu.findme.fragments.InsuranceFragment;
+import com.example.nombu.findme.fragments.LocationFragment;
+import com.example.nombu.findme.fragments.MedicationFragment;
+import com.example.nombu.findme.fragments.UserFragment;
 import com.example.nombu.findme.notifications.MyHandler;
 import com.example.nombu.findme.notifications.NotificationSettings;
 import com.example.nombu.findme.notifications.RegistrationIntentService;
 import com.google.android.gms.location.DetectedActivity;
-import com.google.android.gms.location.Geofence;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import io.nlopez.smartlocation.OnActivityUpdatedListener;
 import io.nlopez.smartlocation.OnLocationUpdatedListener;
-import io.nlopez.smartlocation.OnReverseGeocodingListener;
 import io.nlopez.smartlocation.SmartLocation;
-import io.nlopez.smartlocation.geofencing.model.GeofenceModel;
 import io.nlopez.smartlocation.location.providers.LocationGooglePlayServicesProvider;
 
 //
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.microsoft.windowsazure.notifications.NotificationsManager;
-import android.content.Intent;
-import android.util.Log;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 
@@ -104,14 +103,7 @@ public class MainActivity extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.mainFrame, fragment).commit();
         }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -197,7 +189,16 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         Class fragmentClass = null;
 
-        if (id == R.id.nav_user) {
+        if  (id == R.id.nav_home) {
+            fragmentClass = MainFragment.class;
+            try {
+                fragment = (Fragment) fragmentClass.newInstance();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.mainFrame, fragment).commit();
+        } else if(id == R.id.nav_user) {
             fragmentClass = UserFragment.class;
             try {
                 fragment = (Fragment) fragmentClass.newInstance();
@@ -266,7 +267,6 @@ public class MainActivity extends AppCompatActivity
             }
 
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
